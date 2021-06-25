@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Development Language
+-Ruby2.6.5
+-Rails5.2.5
 
-Things you may want to cover:
 
-* Ruby version
+### Employment Term Technology
+-Heroku
 
-* System dependencies
+### Technology outside the curriculum
+-
 
-* Configuration
 
-* Database creation
+### Execution Procedure
+Just do on the terminal these commands
 
-* Database initialization
+```
+$ git clone https://github.com/rinouu/Original_app.git
+$ cd Original_app
+$ bundle install
+$ rails db:create && rails db:migrate
+$ rails s
+```
+### Catalog Design
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Table Definition Document
 
-* Deployment instructions
 
-* ...
+### Wireframe
+
+
+### ER Diagram
+![alt text](http://home/corine/Documents/Rails/original_app/screen_transition.png)
+
+### Screen Transition Diagram
