@@ -33,7 +33,7 @@ https://docs.google.com/spreadsheets/d/12mz68lxF0XEqDxJeiftDPHVS0YTHnHVVDoNzZjBg
 https://cacoo.com/diagrams/AhybSQV4cd6lCZDs/260E9
 
 ### ER Diagram
-![GitHub Logo](/public/original_application.png)
+![GitHub Logo](/public/origin_app.png)
 
 ### Screen Transition Diagram
 ![GitHub Logo](/public/screen_transition.png)
