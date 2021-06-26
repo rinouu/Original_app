@@ -7,4 +7,8 @@ class Punctuality < ApplicationRecord
 	  where(user_id: query)
 	end
 	max_paginates_per 5
+	scope :date_search, -> (query) {where("date LIKE ?", "%#{query}%")}
+	def date_search(query)
+	  where("date LIKE ?", "%#{query}%")
+	end
 end
