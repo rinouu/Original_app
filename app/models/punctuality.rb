@@ -6,4 +6,5 @@ class Punctuality < ApplicationRecord
 	def user_punctuality_list(query)
 	  where(user_id: query)
 	end
+	max_paginates_per 5
 end

@@ -12,8 +12,8 @@
 <% @punctualities.each do |punc| %>
   <tr >
     <td class="plaint_row" scope="row"><%= punc.date %></td>
-    <td><%= punc.arrival_time %></td>
-    <td class="priority_row"><%= punc.departure_time %></td>
+    <td><%= punc.arrival_time.strftime("%I:%M%p") %></td>
+    <td class="priority_row"><%= punc.departure_time.strftime("%I:%M%p") %></td>
   </tr>
 <% end %>
 </tbody>

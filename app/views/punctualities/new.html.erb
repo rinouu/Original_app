@@ -14,11 +14,11 @@
   
   <div class="punctuality_title form-group">
     <%= form.label :Arrival_time %>
-    <%= form.text_field :arrival_time, class: "form-control" %>
+    <%= form.time_select :arrival_time, class: "form-control" %>
   </div> 
   <div class="punctuality_title form-group">
     <%= form.label :Departure_time %>
-    <%= form.text_field :departure_time, id: "deadline", class: "form-control"%>
+    <%= form.time_select :departure_time, class: "form-control"%>
   </div>
   <%= form.submit value:"Register", class: "btn btn-primary submit"%>
 </div>
