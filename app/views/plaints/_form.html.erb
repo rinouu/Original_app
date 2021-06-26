@@ -1,0 +1,30 @@
+<%= form_with(model: @plaint, local: true ) do |form| %>
+  <% if @plaint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @plaint.errors.count %>Something wrong</h2>
+      <ul>
+      <% @plaint.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="form">  
+  <div class="plaint_title form-group">
+    <%= form.label :plaint_title %>
+    <%= form.text_field :title, id: "plaint" , class: "form-control"%>
+  </div>
+  
+  <div class="plaint_title form-group">
+    <%= form.label :Description %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div> 
+  <div class="plaint_title form-group">
+    <%= form.label :Remarks %>
+    <%= form.text_field :remarks, id: "deadline", class: "form-control"%>
+  </div>
+  <%= form.submit value:"Register", class: "btn btn-primary submit"%>
+</div>
+<% end %>
+<br>
+<%= link_to "Back to the plaint list", plaints_path, class: "badge badge-success" %>
