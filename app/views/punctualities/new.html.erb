@@ -1,0 +1,27 @@
+<h1>New Punctuality</h1>
+<%= form_with(model: @punctuality, local: true ) do |form| %>
+  <% if @punctuality.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @punctuality.errors.count %>Something wrong</h2>
+      <ul>
+      <% @punctuality.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="form">  
+  
+  <div class="punctuality_title form-group">
+    <%= form.label :Arrival_time %>
+    <%= form.text_field :arrival_time, class: "form-control" %>
+  </div> 
+  <div class="punctuality_title form-group">
+    <%= form.label :Departure_time %>
+    <%= form.text_field :departure_time, id: "deadline", class: "form-control"%>
+  </div>
+  <%= form.submit value:"Register", class: "btn btn-primary submit"%>
+</div>
+<% end %>
+<br>
+<%= link_to "Back to the punctuality list", punctualities_path, class: "badge badge-success" %>

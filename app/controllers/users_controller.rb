@@ -3,10 +3,10 @@ class UsersController < ApplicationController
 
 	def new
 		if logged_in?
-			redirect_to plaints_path
+			redirect_to punctualities_path
 		else
 			@user = User.new
-	end
+		end
 	end
 
 	def create

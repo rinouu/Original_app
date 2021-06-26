@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_113934) do
+ActiveRecord::Schema.define(version: 2021_06_26_142506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2021_06_26_113934) do
     t.index ["user_id"], name: "index_plaints_on_user_id"
   end
 
+  create_table "punctualities", force: :cascade do |t|
+    t.date "date"
+    t.time "arrival_time"
+    t.time "departure_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_punctualities_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -42,4 +52,5 @@ ActiveRecord::Schema.define(version: 2021_06_26_113934) do
   end
 
   add_foreign_key "plaints", "users"
+  add_foreign_key "punctualities", "users"
 end
