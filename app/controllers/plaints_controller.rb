@@ -9,8 +9,7 @@ class PlaintsController < ApplicationController
 	end
 
 	def create
-		#@plaint = current_user.plaints.build(plaint_params)
-		@plaint = Plaint.new(plaint_params)
+		@plaint = current_user.plaints.build(plaint_params)
 		if params[:back]
 	  		render :new
 		else
