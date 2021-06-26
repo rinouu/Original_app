@@ -7,7 +7,7 @@
 
 ### Employment Term Technology
 - devise
-- Query
+- Ajax
 
 ### Technology outside the curriculum
 - chartkick
