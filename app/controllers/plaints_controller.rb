@@ -1,7 +1,7 @@
 class PlaintsController < ApplicationController
 	before_action :set_plaint, only: [:edit, :update, :show, :destroy]
 	def index
-		@plaints = Plaint.all.page params[:page]
+		@plaints = Plaint.user_plaint_list(current_user.id).page params[:page]
 	end
 
 	def new
