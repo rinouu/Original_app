@@ -1,0 +1,30 @@
+<h1>Plaints index</h1>
+<p><%= notice %></p>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Category</th>
+    <th scope="col">Remarks</th>
+    <th scope="col">Plaintiff</th>
+  </tr>
+</thead>
+<tbody>
+<% @plaints.each do |plaint| %>
+  <tr >
+    <td class="plaint_row" scope="row"><%= plaint.title %></td>
+    <td><%= plaint.description %></td>
+    <td>
+      <% plaint.categories.pluck(:name).each do |plaint_category| %>
+      <span> <%= plaint_category %> </span>
+      <% end %>
+    </td>
+    <td class="priority_row"><%= plaint.remarks %></td>
+    <td> <%= plaint.user.name %> </td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
