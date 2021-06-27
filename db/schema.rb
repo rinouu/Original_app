@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_142506) do
+ActiveRecord::Schema.define(version: 2021_06_26_235557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2021_06_26_142506) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "plaint_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "plaint_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_plaint_categories_on_category_id"
+    t.index ["plaint_id"], name: "index_plaint_categories_on_plaint_id"
   end
 
   create_table "plaints", force: :cascade do |t|
@@ -51,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_06_26_142506) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "plaint_categories", "categories"
+  add_foreign_key "plaint_categories", "plaints"
   add_foreign_key "plaints", "users"
   add_foreign_key "punctualities", "users"
 end

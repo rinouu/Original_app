@@ -7,4 +7,9 @@ class Plaint < ApplicationRecord
 	def user_plaint_list(query)
 	  where(user_id: query)
 	end
+	has_many :plaint_categories, dependent: :destroy
+	has_many :categories, through: :plaint_categories
+	scope :plaint_category_search, -> (query) {
+		@ids = PlaintCategory.where(category_id: query).pluck(:plaint_id)
+		where(id: @ids)}
 end

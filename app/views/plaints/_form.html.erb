@@ -23,6 +23,10 @@
     <%= form.label :Remarks %>
     <%= form.text_field :remarks, id: "deadline", class: "form-control"%>
   </div>
+    <% Category.all.each do |category| %>
+    <%= form.check_box :category_ids, { multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false }, category[:id] %>
+    <%= form.label :category_ids, category.name, value: "#{category.id}" %>
+  <% end %>
   <%= form.submit value:"Register", class: "btn btn-primary submit"%>
 </div>
 <% end %>

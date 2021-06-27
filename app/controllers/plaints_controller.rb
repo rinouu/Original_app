@@ -1,7 +1,12 @@
 class PlaintsController < ApplicationController
 	before_action :set_plaint, only: [:edit, :update, :show, :destroy]
 	def index
-		@plaints = Plaint.user_plaint_list(current_user.id).page params[:page]
+		all_plaints =  Plaint.user_plaint_list(current_user.id)
+		if params[:category_id]
+			@plaints = all_plaints.plaint_category_search(params[:category_id]).page params[:page]
+		else
+			@plaints = all_plaints.page params[:page]
+		end
 	end
 
 	def new
@@ -44,7 +49,7 @@ class PlaintsController < ApplicationController
 	private
 
 	def plaint_params
-		params.require(:plaint).permit(:title,:description,:remarks)
+		params.require(:plaint).permit(:title,:description,:remarks, category_ids: [])
 	end
 
 	def set_plaint
