@@ -1,5 +1,6 @@
 class PlaintsController < ApplicationController
 	before_action :set_plaint, only: [:edit, :update, :show, :destroy]
+	 before_action :authenticate_user!
 	def index
 		all_plaints =  Plaint.user_plaint_list(current_user.id)
 		if params[:category_id]
@@ -25,7 +26,6 @@ class PlaintsController < ApplicationController
 			end
 		end
 	end
-
 
 	def edit
 	end

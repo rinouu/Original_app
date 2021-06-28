@@ -10,20 +10,20 @@
   </head>
 
   <body>
-    <div>
-      <% if logged_in? %>
-        <div class="menu">
-        <i class="fas fa-home"></i> <%= link_to "Home", plaints_path,  class: "link" %> |
-        <%= link_to 'New plaint', new_plaint_path, class: "link" %> |
-        <%= link_to 'Change profil', edit_user_path(current_user.id), class: "link" %> |
-        <%= link_to 'My page', user_path(current_user.id), class: "link" %> |
-        <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-      <% else %>
-        <%= link_to "Sign up", new_user_path %> |
-        <%= link_to "Login", new_session_path %>
-        </div>
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <%= link_to "Punctualities", punctualities_path %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "sign up", new_user_registration_path %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+
+    <% if notice %>
+    <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-error"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
