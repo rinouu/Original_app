@@ -1,5 +1,4 @@
 <h1>Plaints index</h1>
-<p><%= notice %></p>
 <nav class="navbar navbar-light bg-light">
 <%= form_with url: plaints_path, method: :get, html: {class: "form-inline"} , local: true do |form| %>
   <%= form.label :category_id, "Search by category:" %>
@@ -7,6 +6,8 @@
   <%= form.submit value: "search", class: "btn btn-outline-success my-2 my-sm-0", type: "submit" %>
 <% end %>
 </nav>
+<%= link_to 'New plaint', new_plaint_path, class: "badge badge-success"%>
+<br>
 <table class="table table-hover">
   <thead>
   <tr>
@@ -36,5 +37,4 @@
 </table>
 
 <br>
-
-<%= link_to 'Create a new plaint', new_plaint_path, class: "badge badge-success" %>
+<p><%= paginate @plaints %></p>

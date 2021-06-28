@@ -21,12 +21,13 @@
   </div> 
   <div class="plaint_title form-group">
     <%= form.label :Remarks %>
-    <%= form.text_field :remarks, id: "deadline", class: "form-control"%>
+    <%= form.text_area :remarks, id: "deadline", class: "form-control"%>
   </div>
     <% Category.all.each do |category| %>
     <%= form.check_box :category_ids, { multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false }, category[:id] %>
     <%= form.label :category_ids, category.name, value: "#{category.id}" %>
   <% end %>
+  <br>
   <%= form.submit value:"Register", class: "btn btn-primary submit"%>
 </div>
 <% end %>

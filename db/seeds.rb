@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-4.times do |index|
+categories = ["Didactic", "Poor organization","cohesion"]
+categories.each do |category|
 	Category.create!( 
-	    name: Faker::Lorem.words,
+	    name: category,
 	)
 end

@@ -1,8 +1,5 @@
-<h1>Punctualities list</h1>
-<% if current_user.try(:admin?) %>
-  <%= link_to 'View all Plaints', admin_plaints_path, class: "link" %>
-  <%= link_to 'Manage all users ', admin_users_path, class: "link" %> 
-<% end %>
+<h1>Punctualities recap of <%= @user.name %></h1>
+
 <nav class="navbar navbar-light bg-light">
 <%= form_with url: punctualities_path, method: :get, html: {class: "form-inline"} , local: true do |form| %>
   <%= form.label :date, "Search by date:" %>
@@ -21,7 +18,7 @@
   </tr>
 </thead>
 <tbody>
-<% @punctualities.each do |punc| %>
+<% @user.punctualities.each do |punc| %>
   <tr >
     <td class="plaint_row" scope="row"><%= punc.date %></td>
     <td><%= punc.arrival_time.strftime("%I:%M%p") %></td>
@@ -30,8 +27,4 @@
 <% end %>
 </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Create a new punctuality', new_punctuality_path, class: "badge badge-success" %> 
-<p><%= paginate @punctualities %></p>
+<%= link_to "Back", :back %>
