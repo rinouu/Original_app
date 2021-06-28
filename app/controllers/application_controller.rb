@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
-	protect_from_forgery with: :exception
-	include SessionsHelper
-	before_action :login_required
+ before_action :configure_permitted_parameters, if: :devise_controller?
 
-	private
+ protected
 
-	def login_required
-		redirect_to new_session_path unless current_user
-	end
+ def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+ end
 end

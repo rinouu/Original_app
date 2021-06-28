@@ -1,3 +1,5 @@
 
 <h1>Welcome to your page <%= @user.name %></h1>
 <p>E-mail address: <%= @user.email %></p>
+<%= link_to "Edit Profile", edit_user_registration_path, class: "badge badge-success" %>
+<%= link_to "Back to home", punctualities_path, class: "badge badge-success" %>

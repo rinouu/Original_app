@@ -1,6 +1,8 @@
 <h1>Punctualities list</h1>
-<p><%= notice %></p>
-
+<% if current_user.try(:admin?) %>
+  <%= link_to 'View all Plaints', admin_plaints_path, class: "link" %>
+  <%= link_to 'Manage all users ', admin_users_path, class: "link" %> 
+<% end %>
 <nav class="navbar navbar-light bg-light">
 <%= form_with url: punctualities_path, method: :get, html: {class: "form-inline"} , local: true do |form| %>
   <%= form.label :date, "Search by date:" %>
@@ -31,5 +33,5 @@
 
 <br>
 
-<%= link_to 'Create a new punctuality', new_punctuality_path, class: "badge badge-success" %> || <%= paginate @punctualities %>
-
+<%= link_to 'Create a new punctuality', new_punctuality_path, class: "badge badge-success" %> 
+<p><%= paginate @punctualities %></p>

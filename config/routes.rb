@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-	root to: 'plaints#index'
+  	devise_for :users
+  	resources :users, :only =>[:show]
+  	match '/users/:id', to: 'users#show', via: 'get'
+	root to: 'punctualities#index'
 	resources :plaints
-	resources :users, only: [:new, :create, :show, :update, :edit]
-	resources :sessions, only: [:new, :create, :destroy]
 	resources :punctualities, only: [:index,:new, :create]
+	mount LetterOpenerWeb::Engine, at: "/letter_opener"
 	namespace :admin do
 		resources :users
 		resources :plaints, only: [:index]

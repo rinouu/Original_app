@@ -2,3 +2,5 @@
 <p>Name: <%= @plaint.title %></p>
 <p>Description: <%= @plaint.description %></p>
 <p>Remarks: <%= @plaint.remarks %></p>
+<%= link_to "Edit plaint", edit_plaint_path(@plaint.id), class: "badge badge-success" %>
+<%= link_to "Back to the plaint list", plaints_path, class: "badge badge-success" %>

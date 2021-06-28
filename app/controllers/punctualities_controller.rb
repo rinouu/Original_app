@@ -1,6 +1,5 @@
 class PunctualitiesController < ApplicationController
-	skip_before_action :login_required, only: [:index, :new, :create]
-
+	before_action :authenticate_user!
 	def index
 		all_punctualities = Punctuality.user_punctuality_list(current_user.id)
 		if params[:date]
