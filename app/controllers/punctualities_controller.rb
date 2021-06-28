@@ -2,8 +2,11 @@ class PunctualitiesController < ApplicationController
 	before_action :authenticate_user!
 	def index
 		all_punctualities = Punctuality.user_punctuality_list(current_user.id)
-		if params[:date]
-			@punctualities = all_punctualities.date_search(params[:date]).page params[:page]
+		if params["date(1i)"]
+			regdate =  Date.new(params["date(1i)"].to_i,
+                    params["date(2i)"].to_i,
+                    params["date(3i)"].to_i)
+			@punctualities = all_punctualities.date_search(regdate).page params[:page]
 		else
 			@punctualities = all_punctualities.page params[:page]
 		end

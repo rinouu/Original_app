@@ -40,6 +40,15 @@ class Admin::UsersController < ApplicationController
 	end
 
 	def show
+		all_punctualities = @user.punctualities
+		if params["date(1i)"]
+			regdate =  Date.new(params["date(1i)"].to_i,
+                    params["date(2i)"].to_i,
+                    params["date(3i)"].to_i)
+			@punctualities = all_punctualities.date_search(regdate).page params[:page]
+		else
+			@punctualities = all_punctualities.page params[:page]
+		end
 	end
 
 	def destroy

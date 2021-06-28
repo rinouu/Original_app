@@ -1,14 +1,13 @@
 <h1>Punctualities recap of <%= @user.name %></h1>
 
 <nav class="navbar navbar-light bg-light">
-<%= form_with url: punctualities_path, method: :get, html: {class: "form-inline"} , local: true do |form| %>
+<%= form_with url: admin_user_path(@user.id), method: :get, html: {class: "form-inline"} , local: true do |form| %>
   <%= form.label :date, "Search by date:" %>
   <%= form.date_select :date, class: "form-control mr-sm-2" %>
   <%= form.submit value: "search", class: "btn btn-outline-success my-2 my-sm-0", type: "submit" %>
 <% end %>
 </nav>
 <br>
-
 <table class="table table-hover">
   <thead>
   <tr>
@@ -18,7 +17,7 @@
   </tr>
 </thead>
 <tbody>
-<% @user.punctualities.each do |punc| %>
+<% @punctualities.each do |punc| %>
   <tr >
     <td class="plaint_row" scope="row"><%= punc.date %></td>
     <td><%= punc.arrival_time.strftime("%I:%M%p") %></td>
