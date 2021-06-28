@@ -1,0 +1,9 @@
+<h1>Plainte de <%= @complaint.user.name%> </h1>
+<p>Title of : <%= @complaint.title %> of categori(es)
+	<% @complaint.categories.pluck(:name).each do |plaint_category| %>
+		<span> <%= plaint_category %> </span>
+	<% end %>
+<br>
+</p>
+<p>Description: <%= @complaint.description %></p>
+<p>Remarks: <%= @complaint.remarks %></p>

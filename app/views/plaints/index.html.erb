@@ -24,7 +24,7 @@
     <td><%= plaint.description %></td>
     <td>
       <% plaint.categories.pluck(:name).each do |plaint_category| %>
-      <span> <%= plaint_category %> </span>
+        <span> <%= plaint_category %> </span>
       <% end %>
     </td>
     <td class="priority_row"><%= plaint.remarks %></td>

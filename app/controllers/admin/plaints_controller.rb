@@ -17,8 +17,10 @@ class Admin::PlaintsController < ApplicationController
 			@plaint.update_attribute(:resolved, false)
 		else
 			@plaint.update_attribute(:resolved, true)
+			PlaintResolvedMailer.plaint_resolved_mail(@plaint,User.admin_search).deliver 
+			redirect_to admin_plaints_path, notice: "Plaint resolved"
 		end
-		redirect_to admin_plaints_path, notice: "Plaint resolved"
+
 	end
 
 	private

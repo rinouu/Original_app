@@ -21,6 +21,7 @@ class PlaintsController < ApplicationController
 	  		render :new
 		else
 			if @plaint.save
+				PlaintSubmitMailer.plaint_submit_mail(@plaint,User.admin_search).deliver 
 				redirect_to plaints_path, notice: "plaint created!"
 			else
 				render :new

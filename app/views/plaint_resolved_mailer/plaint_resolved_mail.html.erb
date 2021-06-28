@@ -1,0 +1,7 @@
+<p>Your plainte of Title : <%= @complaint.title %> of categori(es)
+	<% @complaint.categories.pluck(:name).each do |plaint_category| %>
+		<span> <%= plaint_category %> </span>
+	<% end %>
+<br>
+with Description: <%= @complaint.description %>
+and Remarks: <%= @complaint.remarks %> is resolved by admin(<%= @admin.email %>)!</p>
