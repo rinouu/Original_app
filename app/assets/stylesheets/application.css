@@ -10,6 +10,126 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+body {
+  background: url(/back.jpg) center fixed;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #182956;
+  overflow: auto;
+}
+
+.container-fluid {
+	display: flex;
+	justify-content: space-between;
+	background-color: #ccffff;
+	height: 100px;
+}
+.container {
+  background-color: #8c7373;
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px 2px #3333331A;
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+	width: 100%;
+  }
+  .header-container {
+	display: flex;
+	align-items: center;
+    width: 100%;
+  }
+}
+nav li {
+  float: left;
+  width: auto;
+  list-style: none;
+}
+
+nav ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul {
+  float: left;
+}
+
+footer {
+	text-align: center;
+	position: fixed;
+	margin-bottom: 0;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-bottom: 0;
+	margin-top: -60px;
+}
+
+.hidden {
+	display: none;
+}
+
+#flash {
+	background-color: #00c853;
+	border: 1px solid;
+	border-radius: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 25%;
+}
+
+#error_explanation  {
+	border: 2px solid;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color: red;
+	text-align:center;
+}
+
+#error_explanation li {
+    color:white;
+}
+
+.form {
+	border: 2px solid;
+	border-radius: 6px;
+	margin: 0 auto;
+	text-align: center;
+	width: 50%;
+	background-color: #f6f6f6;
+}
+
+
+.nav-link {
+	text-decoration: none;
+	display: block;
+	color:#1877f2;
+	padding-left: 8px;
+}

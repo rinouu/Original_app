@@ -1,8 +1,9 @@
-<h1>Punctualities list</h1>
 <% if current_user.try(:admin?) %>
-  <%= link_to 'View all Plaints', admin_plaints_path, class: "link" %>
-  <%= link_to 'Manage all users ', admin_users_path, class: "link" %> 
+  <%= link_to 'View all Plaints', admin_plaints_path, class: "btn btn-info" %>
+  <%= link_to 'Manage all users ', admin_users_path, class: "btn btn-info" %> 
 <% end %>
+<br>
+<h1>Punctualities list</h1>
 <nav class="navbar navbar-light bg-light">
 <%= form_with url: punctualities_path, method: :get, html: {class: "form-inline"} , local: true do |form| %>
   <%= form.label :date, "Search by date:" %>
