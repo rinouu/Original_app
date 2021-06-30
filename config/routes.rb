@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  get 'statics/top'
   	devise_for :users
   	resources :users, :only =>[:show]
   	match '/users/:id', to: 'users#show', via: 'get'
-	root to: 'punctualities#index'
+	root to: 'statics#top'
 	resources :plaints
 	resources :punctualities, only: [:index,:new, :create]
 	mount LetterOpenerWeb::Engine, at: "/letter_opener"
