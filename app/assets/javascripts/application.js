@@ -16,6 +16,7 @@
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
+global.$ = jQuery;
 setTimeout(function(){
     document.getElementById('flash').className += ' hidden';
 	}, 3000);
