@@ -18,7 +18,6 @@
 //= require chartkick
 //= require Chart.bundle
 //= require_tree .
-global.$ = jQuery;
 setTimeout(function(){
     document.getElementById('flash').className += ' hidden';
 	}, 3000);
