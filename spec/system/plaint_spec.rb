@@ -37,20 +37,20 @@ RSpec.describe 'Plaint management function', type: :system do
     end
   end
   describe 'Detailed display function' do
-      before do
-        @user = FactoryBot.create(:user3)
-        @admin = FactoryBot.create(:admin)
-        visit root_path
-      end
-     context 'When transitioned to any plaint details screen' do
-       it 'The content of the relevant plaint is displayed' do
+    before do
+      @user = FactoryBot.create(:user3)
+      @admin = FactoryBot.create(:admin)
+      visit root_path
+    end
+    context 'When transitioned to any plaint details screen' do
+      it 'The content of the relevant plaint is displayed' do
         fill_in 'email', with: @user.email
         fill_in 'password', with: @user.password
         click_button "Login"
         plaint = FactoryBot.create(:plaint, title: 'plaint', description: "example2")
         visit plaint_path(plaint.id)
         expect(page).to have_content 'plaint'
-       end
-     end
+      end
+    end
   end
 end
