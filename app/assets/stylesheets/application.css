@@ -17,46 +17,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *{
-  box-sizing: border-box;
-  border-radius: 5px;
+  /*box-sizing: border-box;*/
+  /*border-radius: 2px;*/
+
+}
+
+html, body {
+  width: 100%;
+  height: 100vh; /* 100% of the viewport height */
+  margin: 0;
 }
 
 body {
-  background: center fixed;
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  width: 100%;
+  /*min-height: 100vh;*/
   color: #182956;
   overflow: auto;
+}
+
+.container-parent {
+	background: url(/back3.jpg) fixed;
+  	background-repeat: no-repeat;
+  	background-size: 100% 100%;
+  	position: relative;
+  	height: 100%;
+  	padding-top: 25px;
+ 	padding-bottom: 0%;
 }
 
 .container-fluid {
 	display: flex;
 	justify-content: space-between;
 	background-color: #ccffff;
-	height: 100px;
+	height: 120px;
 }
 .container {
-  background-color: #8c7373;
-  min-width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #faf8f4;
+  /*min-width: 100%;*/
   border: 2px solid #ffffff;
   box-shadow: 0 0 10px 2px #3333331A;
   border-radius: 5px;
   padding: 0.25rem 1rem;
 }
 
-@media only screen and (max-width: 1000px) {
-  .container {
-	width: 100%;
+#top {
+	background-color: white;
+}
+
+#forgot {
+	margin-top: 10%;
+}
+
+.top {
+	background-color: #faf8f4;
+}
+
+.vert {
+	position: relative;
+	background-color: #d7eaea;
+}
+
+.ver {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.ac {
+	padding: 100px 0;
+	/*text-align: center;*/
   }
+
+.row {
+    display: table;
+}
+
+[class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+
+#right {
+	/*background: url(/back2.jpg) center fixed;
+	background-size: cover;
+	height: 100%;*/
+	background-color: #00bdbd;
+	color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  /*.container {
+	width: 100%;
+  }*/
   .header-container {
 	display: flex;
 	align-items: center;
@@ -111,6 +173,7 @@ footer {
 	width: 50%;
 	background-color: red;
 	text-align:center;
+	display: inline-block;
 }
 
 #error_explanation li {
@@ -126,6 +189,17 @@ footer {
 	background-color: #f6f6f6;
 }
 
+.input {
+	background-color: #e4e3e2;
+	border: none;
+	height: 75%; 
+}
+
+hr {
+	border: 1px solid #00bdbd;
+	width: 25%;
+
+}
 
 .nav-link {
 	text-decoration: none;
@@ -137,3 +211,8 @@ footer {
 .greenBg {
     background: green;
 }
+
+.badge {
+    background-color: #f5592f;
+}
+

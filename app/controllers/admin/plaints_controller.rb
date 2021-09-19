@@ -16,7 +16,7 @@ class Admin::PlaintsController < ApplicationController
 		respond_to do |format|
 			if @plaint.resolved == true
 				@plaint.update_attribute(:resolved, false)
-				format.html { redirect_to admin_plaints_path, notice: "Plaint no-resolved" }
+				format.html { redirect_to admin_plaints_path }
 			else
 				@plaint.update_attribute(:resolved, true)
 				PlaintResolvedMailer.plaint_resolved_mail(@plaint,User.admin_search).deliver

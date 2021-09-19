@@ -10,52 +10,52 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
-          <span class="sr-only">Bootstrap</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Plaints & Punctuality</a>
+    <% if user_signed_in? %>
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+            <span class="sr-only">Bootstrap</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= image_tag("/logo2.png", style: "height:120px;width:120px;") %>
+        </div>
+        <div id="gnavi" class="collapse navbar-collapse justify-content-end">
+          <ul class="nav navbar-nav ">
+                <li class="nav-item"><%= link_to "Punctualities list", punctualities_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to 'New punctuality', new_punctuality_path, class: "nav-link" %></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plaints</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to "Plaints List", plaints_path, class: "dropdown-item" %>
+                    <%= link_to "New plaint", new_plaint_path, class: "dropdown-item" %>
+                  </div>
+                </li>
+                <li class="nav-item"><%= link_to 'Account', user_path(current_user.id), class: "nav-link" %> </li>
+                <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+          </ul>
+        </div>
       </div>
-      <div id="gnavi" class="collapse navbar-collapse justify-content-end">
-        <ul class="nav navbar-nav ">
-          <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to "Punctualities list", punctualities_path, class: "nav-link" %></li>
-              <li class="nav-item"><%= link_to 'New punctuality', new_punctuality_path, class: "nav-link" %></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plaints</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <%= link_to "Plaints List", plaints_path, class: "dropdown-item" %>
-                  <%= link_to "New plaint", new_plaint_path, class: "dropdown-item" %>
-                </div>
-              </li>
-              <li class="nav-item"><%= link_to 'Account', user_path(current_user.id), class: "nav-link" %> </li>
-              <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
-            <% else %>
-              <li class="nav-item"><%= link_to "sign up", new_user_registration_path, class: "nav-link" %></li>
-              <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
-            <% end %>
-        </ul>
-      </div>
-    </div>
-  </nav>
-    
-    <% if notice %>
-    <p class="alert alert-notice" id="flash"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert alert-error" id="flash"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+      </nav>
     <footer class="bg-light text-center text-lg-start">
       <div class="text-center p-3" style="background-color: #ccd9ff;">
         © 2021 Copyright:
         <span class="text-dark" href="#">Plaints & Punctuality</span>
       </div>
     </footer>
+    <% end %> 
+    <% if notice %>
+    <p class="alert alert-notice" id="flash"><%= notice %></p>
+    <br>
+    <br>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-error" id="flash"><%= alert %></p>
+    <br>
+    <br>
+    <% end %>
+    <%= yield %>
   </body>
 </html>

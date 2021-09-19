@@ -41,9 +41,8 @@
 <% end %>
 </tbody>
 </table>
-
-<%= pie_chart PlaintCategory.group(:category_id).count %>
-<%= link_to "Back", :back, class: "btn btn-dark" %>
-<p><%= paginate @plaints %></p>
+<%= pie_chart PlaintCategory.group(:category_id).count, library: ["1":"Career follow up", "2":"relational", "3":"punctuality"] %>
+<%= paginate @plaints %> ||
+<%= link_to "Back", :back, class: "badge" %>
 
 

@@ -23,7 +23,7 @@ class PunctualitiesController < ApplicationController
 	  		render :new
 		else
 			if @plaint.save
-				redirect_to punctualities_path, notice: "plaint save!"
+				redirect_to punctualities_path, notice: "punctuallity save!"
 			else
 				render :new
 			end

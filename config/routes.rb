@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'statics/top'
+    get 'statics/top'
   	devise_for :users
   	resources :users, :only =>[:show]
   	match '/users/:id', to: 'users#show', via: 'get'

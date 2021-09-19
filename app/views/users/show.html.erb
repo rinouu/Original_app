@@ -1,5 +1,35 @@
+				<% resolved = 0 %> 
+				<% not_resolved = 0 %> 
+				<% @user.plaints.each do |user_plaint| %>
+					<% if user_plaint.resolved? %>
+					<% resolved+=1%>
+					<%else%>
+					<% not_resolved+=1%>
+					<%end%>
+				<%end%>
 
-<h1>Welcome to your page <%= @user.name %></h1>
-<p>E-mail address: <%= @user.email %></p>
-<%= link_to "Edit Profile", edit_user_registration_path, class: "badge badge-success" %>
-<%= link_to "Back to home", punctualities_path, class: "badge badge-success" %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h1>My account</h1>
+			<h4>
+				Name: <%= @user.name %>
+			</h4>
+			<h4>
+				E-mail address: <%= @user.email %>
+			</h4>
+			<h4>
+				Account updated at: <%= @user.updated_at.to_date %>
+			</h4>
+			<hr>
+			<h4>
+				You have <strong> <%= resolved %> </strong> plaint(s) resolved and <strong> <%= not_resolved %> </strong> plaint(s) not resolved.
+			</h4>
+			<%= link_to "Edit Profile", edit_user_registration_path, class: "badge badge-success" %>
+			<%= link_to "Back to home", punctualities_path, class: "badge badge-success" %>
+		</div>
+		<div class="col-md-4">
+			<%= image_tag("/human.jpg", style: "width:600px;") %>
+		</div>
+	</div>
+</div>
