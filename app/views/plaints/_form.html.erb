@@ -12,17 +12,19 @@
  <div class="form">  
   <div class="plaint_title form-group">
     <%= form.label :plaint_title %>
-    <%= form.text_field :title, id: "plaint" , class: "form-control"%>
+    <%= form.text_field :title, id: "plaint" , placeholder: "Title...", class: "form-control"%>
   </div>
   
   <div class="plaint_title form-group">
     <%= form.label :Description %>
-    <%= form.text_field :description, id: "description", class: "form-control" %>
+    <%= form.text_field :description, id: "description", placeholder: "Description...", class: "form-control" %>
   </div> 
   <div class="plaint_title form-group">
     <%= form.label :Remarks %>
-    <%= form.text_area :remarks, id: "deadline", class: "form-control"%>
+    <%= form.text_area :remarks, id: "deadline", placeholder: "Remarks...", class: "form-control"%>
   </div>
+    <%= form.label :Category %>
+    <br>
     <% Category.all.each do |category| %>
     <%= form.check_box :category_ids, { multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false }, category[:id] %>
     <%= form.label :category_ids, category.name, value: "#{category.id}" %>
