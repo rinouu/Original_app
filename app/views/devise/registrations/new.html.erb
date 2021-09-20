@@ -17,10 +17,12 @@
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="form-group">
+            <%= f.label :Name, "Name: ", class: "label2" %>
             <%= f.text_field :name, id: "name", autofocus: true, autocomplete: "name", placeholder: "Name...", class: "input"%>
           </div>
 
           <div class="form-group">
+            <%= f.label :Email, "Email: ", class: "label2" %>
             <%= f.email_field :email, id: "email", autocomplete: "email", placeholder: "Email...", class: "input" %>
           </div>
 
@@ -29,11 +31,13 @@
             <em>(<%= @minimum_password_length %> char. mini)</em>
             <br>
             <% end %>
+            <%= f.label :Password, "Password: ", class: "label2" %>
             <%= f.password_field :password, id: "password", autocomplete: "new-password", placeholder: "Password...", class: "input" %>
 
           </div>
 
           <div class="form-group">
+            <%= f.label :Password_confirmation, "Password confirmation: ", class: "label2" %>
             <%= f.password_field :password_confirmation, id: "password_confirmation", autocomplete: "new-password", placeholder: "Password_confirmation...", class: "input" %>
           </div>
 

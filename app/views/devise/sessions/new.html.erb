@@ -11,10 +11,12 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           
             <div class="form-group">
+              <%= f.label :Email, "Email: ", class: "label2" %>
               <%= f.email_field :email,id: "email", autofocus: true, autocomplete: "email",placeholder: "Email...", class: "input" %>
             </div>
 
             <div class="form-group">
+              <%= f.label :Email, "Password: ", class: "label2" %>
               <%= f.password_field :password, id: "password", autocomplete: "current-password" , placeholder: "Password...", class: "input" %>
             </div>
 

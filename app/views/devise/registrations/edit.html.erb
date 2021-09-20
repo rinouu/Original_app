@@ -19,7 +19,7 @@
 
     <div class="form-group">
       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password...",class: "input" %>
       <% if @minimum_password_length %>
         <br />
         <em><%= @minimum_password_length %> characters minimum</em>
@@ -28,12 +28,12 @@
 
     <div class="form-group">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password_confirmation...", class: "input" %>
     </div>
 
     <div class="form-group">
       <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "input" %>
+      <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current_assword...", class: "input" %>
     </div>
     <%= f.submit "Update" %>
   </div>
@@ -41,4 +41,4 @@
 </div>
 
 
-<%= link_to "Back", :back, class: "btn btn-dark" %>
+<%= link_to "Back", :back, class: "badge" %>

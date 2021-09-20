@@ -15,7 +15,7 @@ RSpec.describe 'User management function', type: :system do
     context 'When the user tries to jump to the plaint list screen without logging' do
       it 'Transition to the login screen' do
         visit plaints_path
-        expect(page).to have_content 'Log in'
+        expect(page).to have_content 'Sign In'
       end
     end
   end
@@ -40,7 +40,7 @@ RSpec.describe 'User management function', type: :system do
         fill_in 'password', with: @user.password
         click_button "Login"
         visit user_path(@user.id)
-        expect(page).to have_content 'Welcome to your page'
+        expect(page).to have_content 'My account'
       end
     end
     context 'When a general user jumps to another person\'s details screen' do

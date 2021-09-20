@@ -12,19 +12,23 @@
       </div>
     <% end %>
     <br>
+    <%= f.label :Name, "Name: ", class: "label2" %>
     <%= f.text_field :name, placeholder: "Name..." %> 
     <br>
     <br>
+    <%= f.label :Email, "Email: ", class: "label2" %>
     <%= f.email_field :email, placeholder: "Email..." %>
     <br>
     <br> 
+    <%= f.label :Password, "Password: ", class: "label2" %>
     <%= f.password_field :password, placeholder: "Password..." %>
     <br> 
     <br> 
+    <%= f.label :Email, "Password confirmation: ", class: "label2" %>
     <%= f.password_field :password_confirmation, placeholder: "Password confirmation..." %> 
     <br>
     <br>
     <%= f.submit "Modify account", class: "submit" %> 
   <% end %>
 </div>
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: "badge" %>

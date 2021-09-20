@@ -8,7 +8,7 @@
 
 		  <div class="field">
 		    <%= f.label :email %><br />
-		    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+		    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email...", class: "input" %>
 		  </div>
 		  <br>
 		  <div class="actions">
@@ -19,4 +19,5 @@
 		<%= render "devise/shared/links" %>
 
 	</div>
+	<%= link_to "Back", :back , class: "badge"%>
 </div>

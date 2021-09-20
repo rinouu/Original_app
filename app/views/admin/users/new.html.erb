@@ -14,19 +14,23 @@
       </div>
     <% end %>
     <br>
+    <%= f.label :Name, "Name: ", class: "label2" %>
     <%= f.text_field :name, id: "name", placeholder: "Name..." %> 
     <br>
     <br>
+    <%= f.label :Email, "Email: ", class: "label2" %>
     <%= f.email_field :email, id: "email", placeholder: "Email..." %>
     <br>
-    <br> 
+    <br>
+    <%= f.label :Password, "Password: ", class: "label2" %> 
     <%= f.password_field :password, id: "password", placeholder: "Password..." %>
     <br> 
     <br> 
+    <%= f.label :password_confirmation, "Password confirmation: ", class: "label2" %>
     <%= f.password_field :password_confirmation, id: "password_confirmation", placeholder: "Password confirmation..." %> 
     <br>
     <br>
     <%= f.submit "Create account", class: "submit", value: "Register" %> 
   <% end %>
 </div>
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back , class: "badge"%>

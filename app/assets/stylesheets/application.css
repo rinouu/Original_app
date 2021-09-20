@@ -216,3 +216,9 @@ hr {
     background-color: #f5592f;
 }
 
+.label2 {
+    /* Other styling... */
+	display: block;
+	width: 150px;
+	float: left;
+}
