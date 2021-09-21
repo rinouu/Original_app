@@ -4,7 +4,7 @@ RSpec.describe 'Plaint management function', type: :system do
     before do
       @user = FactoryBot.create(:user)
       @admin = FactoryBot.create(:admin)
-      visit root_path
+      visit new_user_session_path
     end
     context 'When creating a new plaint' do
       it 'The created plaint is displayed' do
@@ -23,7 +23,7 @@ RSpec.describe 'Plaint management function', type: :system do
     before do
       @user = FactoryBot.create(:user2)
       @admin = FactoryBot.create(:admin)
-      visit root_path
+      visit new_user_session_path
     end
     context 'When transitioning to the list screen' do
       it 'The created plaint list is displayed' do
@@ -40,7 +40,7 @@ RSpec.describe 'Plaint management function', type: :system do
     before do
       @user = FactoryBot.create(:user3)
       @admin = FactoryBot.create(:admin)
-      visit root_path
+      visit new_user_session_path
     end
     context 'When transitioned to any plaint details screen' do
       it 'The content of the relevant plaint is displayed' do

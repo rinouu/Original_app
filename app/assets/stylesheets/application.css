@@ -56,6 +56,7 @@ body {
 	justify-content: space-between;
 	background-color: #ccffff;
 	height: 120px;
+	margin-top: 0%
 }
 .container {
   background-color: #faf8f4;
@@ -123,6 +124,7 @@ body {
 	display: flex;
 	align-items: center;
     width: 100%;
+    margin-top: 0%
   }
 }
 nav li {
@@ -161,9 +163,9 @@ footer {
 	background-color: #00c853;
 	border: 1px solid;
 	border-radius: 2px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0px auto;
 	width: 25%;
+	margin-top: 0%;
 }
 
 #error_explanation  {
@@ -221,4 +223,10 @@ hr {
 	display: block;
 	width: 150px;
 	float: left;
+}
+
+.guest {
+  margin: 0px 10px;
+  word-wrap: normal;
+  display: inline-block;
 }

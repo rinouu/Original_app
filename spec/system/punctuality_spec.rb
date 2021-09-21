@@ -4,7 +4,7 @@ RSpec.describe 'Punctuality management function', type: :system do
     before do
       @user = FactoryBot.create(:user)
       @admin = FactoryBot.create(:admin)
-      visit root_path
+      visit new_user_session_path
     end
     context 'When creating a new punctuality' do
       it 'The created punctuality is displayed' do

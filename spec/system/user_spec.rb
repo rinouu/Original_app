@@ -9,7 +9,7 @@ RSpec.describe 'User management function', type: :system do
         fill_in 'password', with: '123456'
         fill_in 'password_confirmation', with: '123456'
         click_button "Register"
-        expect(page).to have_content 'Welcome on Plaints & Punctualities'
+        expect(page).to have_content 'Punctualities list'
       end
     end
     context 'When the user tries to jump to the plaint list screen without logging' do
@@ -30,7 +30,7 @@ RSpec.describe 'User management function', type: :system do
         fill_in 'email', with: @user.email
         fill_in 'password', with: @user.password
         click_button "Login"
-        expect(page).to have_content 'Welcome on Plaints & Punctualities'
+        expect(page).to have_content 'Punctualities list'
       end
     end
     context 'When the user tries to jump to your details screen' do
@@ -60,7 +60,7 @@ RSpec.describe 'User management function', type: :system do
         fill_in 'password', with: @user.password
         click_button "Login"
         click_link "Log out"
-        expect(page).to have_content 'Sign up'
+        expect(page).to have_content 'Sign Up'
       end
     end
   end
